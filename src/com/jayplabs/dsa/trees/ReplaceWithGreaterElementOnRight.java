@@ -1,7 +1,7 @@
 package com.jayplabs.dsa.trees;
 
 /**
- * Created by cgopalai on 9/24/16.
+ * Created by Chandra Gopalaiah on 9/24/16.
  */
 
 import com.jayplabs.dsa.common.Node;
@@ -26,6 +26,8 @@ import java.util.Arrays;
  * A tricky solution would be to use Binary Search Trees. We start scanning the array from right to left and insert
  * each element into the BST. For each inserted element, we replace it in the array by its inorder successor in BST.
  * If the element inserted is the maximum so far (i.e. its inorder successor doesn’t exists), we replace it by -1.
+ *
+ * Reference : http://www.geeksforgeeks.org/replace-every-element-with-the-least-greater-element-on-its-right/
  */
 
 public class ReplaceWithGreaterElementOnRight {
