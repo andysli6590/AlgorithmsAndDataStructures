@@ -72,13 +72,9 @@ public class BSTtoMinHeap {
         if (head == null) return null;
 
         Queue<Node> queue = new LinkedList<>();
-
         Node root = head;   //set head of list as heap root
-
         head = head.right;  //Move head of list to next
-
         root.right = null;  //Break the link
-
         queue.add(root);    //Enqueue the root
 
         while (head != null) {  // Iterate until the head of list is empty

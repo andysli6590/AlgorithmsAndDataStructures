@@ -7,7 +7,6 @@ package com.jayplabs.dsa.trees;
 import com.jayplabs.dsa.common.Node;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  Construct all possible BSTs for keys 1 to N
@@ -55,7 +54,7 @@ import java.util.List;
 public class ConstructAllBSTsForKeys1toN {
 
     public static ArrayList<Node> constructAllBSTs(int start, int end) {
-        ArrayList<Node> list = new ArrayList<>();
+        ArrayList<Node> list = new ArrayList<>(); // List to hold root of each constructed BST
 
         if (start > end) {
             list.add(null);
@@ -94,7 +93,7 @@ public class ConstructAllBSTsForKeys1toN {
         ArrayList<Node> list = constructAllBSTs(1,3);
 
         for(int i=0;i<list.size();i++) {
-            System.out.println("inOrder");
+            System.out.println("PreOrder");
             preOrder(list.get(i));
             System.out.println();
         }
