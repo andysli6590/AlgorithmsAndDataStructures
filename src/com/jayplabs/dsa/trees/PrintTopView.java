@@ -10,7 +10,7 @@ import java.util.*;
 public class PrintTopView {
     public static void topView(Node root) {
 
-        TreeMap<Integer, ArrayList<Node>> map = new TreeMap<>();
+        TreeMap<Integer, Node> map = new TreeMap<>();
         Queue<QueuePack> queue = new LinkedList<>();
 
         queue.add(new QueuePack(0, root));
@@ -22,13 +22,8 @@ public class PrintTopView {
                 Node node = q.tNode;
                 int level = q.level;
 
-                ArrayList<Node> list = map.get(level);
-                if (list == null) {
-                    list = new ArrayList<>();
-                    list.add(node); // If this line is moved out of if condition then we can print tree column wise
-                    map.put(level, list);
-                }
-
+                if (!map.containsKey(level))
+                    map.put(level, node);
 
                 if (node.left != null) {
                     queue.add(new QueuePack(level - 1, node.left));
@@ -40,14 +35,9 @@ public class PrintTopView {
                 levelOrder--;
             }
         }
-
-        Set<Integer> distances = map.keySet();
-        for (Integer distance : distances) {
-            ArrayList<Node> nodes = map.get(distance);
-            for (Node node : nodes) {
-                System.out.print(node.data + " ");
-            }
-            System.out.println();
+        Set<Integer> levels = map.keySet();
+        for (Integer level : levels) {
+            System.out.print(map.get(level).data + " ");
         }
     }
     public static void main(String[] args) {
