@@ -7,6 +7,10 @@ import java.util.*;
 /**
  * Created by Chandra Gopalaiah on 9/25/16.
  */
+
+/**
+ * Reverse alternate levels in a complete binary tree
+ */
 public class ReverseAlternateLevels {
 
     public static ArrayList<Integer> list = new ArrayList<>();
@@ -70,9 +74,14 @@ public class ReverseAlternateLevels {
         root.left.right = new Node(1);
         root.left.left.left = new Node(9);
         root.left.left.right = new Node(2);
-        root.left.left.right.right = new Node(7);
-        root.right.right = new Node(0);
-        root.right.right.left = new Node(8);
+        root.left.right.left = new Node(8);
+        root.left.right.right = new Node(7);
+        root.right.left = new Node(10);
+        root.right.right = new Node(12);
+        root.right.left.left = new Node(24);
+        root.right.left.right = new Node(22);
+        root.right.right.left = new Node (19);
+        root.right.right.right = new Node (17);
 
 
         System.out.println("Original Tree : ");
